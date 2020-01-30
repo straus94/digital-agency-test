@@ -1,0 +1,142 @@
+@import '_reset.scss';
+@import '_var.scss';
+
+.mainer {
+    min-width: 400px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $space;
+}
+
+.block-search {
+    &__text {
+        border: 1px solid rgba(12, 77, 218, 0.815);
+        padding: 5px $space;
+        outline: none;
+        border-radius: $space;
+
+    }
+}
+
+.btn {
+    padding: 5px $space;
+    outline: none;
+    border-radius: $space;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(12, 77, 218, 0.815);
+
+    &:hover {
+        background-color: rgba(12, 77, 218, 0.415);
+
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+.item {
+    width: 25%;
+    max-height: 250px;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+
+    &__block {
+        position: relative;
+        padding: $space;
+        flex-grow: 1;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        left: $space;
+        right: $space;
+        height: $space * 3;
+        bottom: $space;
+        background-color: rgba(0, 0, 0, 0.472);
+        color: #ffffff;
+        padding: 0 $space;
+        z-index: 1000;
+        overflow: hidden;
+
+    }
+
+    &__icon {
+        font-size: $fontSizeBase + 1;
+        cursor: pointer;
+
+        &:hover {
+            color: #7aff51;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        top: $space;
+        left: $space;
+        right: $space;
+        bottom: $space;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #000000b2;
+        display: none;
+        
+
+        &--visible {
+            display: flex;
+        }
+    }
+
+    &__size {
+        color: #ffffff;
+        font-size: $fontSizeBase + 6;
+    }
+
+    &__link {
+        color: #ffffff;
+        font-size: $fontSizeBase + 4;
+    }
+}
+
+@media screen and (max-width: 678px){
+    .item {
+
+        &__info {
+            padding: $space 0 0 0;
+            justify-content: flex-start;
+        }
+
+        &__title {
+            height: $space * 2;
+        }
+
+        &__title, &__size, &__link {
+            font-size: $fontSizeBase - 2;
+        }
+
+    }
+}
+
+@media screen and (max-width: 480px){
+    .item {
+
+        &__title, &__size, &__link {
+            font-size: $fontSizeBase - 4;
+        }
+    }
+}
